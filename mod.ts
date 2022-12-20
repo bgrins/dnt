@@ -345,7 +345,8 @@ export async function build(options: BuildOptions): Promise<void> {
     log("Emitting script package...");
     project.compilerOptions.set({
       declaration: false,
-      esModuleInterop: true,
+      // https://github.com/denoland/dnt/issues/239
+      // esModuleInterop: true,
       outDir: scriptOutDir,
       module: options.scriptModule === "umd"
         ? ts.ModuleKind.UMD
