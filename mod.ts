@@ -346,7 +346,7 @@ export async function build(options: BuildOptions): Promise<void> {
     project.compilerOptions.set({
       declaration: false,
       // https://github.com/denoland/dnt/issues/239
-      // esModuleInterop: true,
+      esModuleInterop: false,
       outDir: scriptOutDir,
       module: options.scriptModule === "umd"
         ? ts.ModuleKind.UMD
